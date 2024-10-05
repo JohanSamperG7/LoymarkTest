@@ -1,0 +1,6 @@
+@Loymark.Back.WebApi_HostAddress = http://localhost:5153
+
+GET {{Loymark.Back.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
