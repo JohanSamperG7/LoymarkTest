@@ -1,0 +1,66 @@
+<div class="max-w-[720px] mx-auto">
+    <div
+        class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border">
+        <div
+            class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
+            <div class="flex items-center justify-between ">
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800">Lista de Actividades</h3>
+                    <p class="text-slate-500">Histórico Usuarios - Loymark</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="p-0">
+            <table class="w-full mt-4 text-left table-auto min-w-max">
+                <thead>
+                    <tr>
+                        <th class="p-4 transition-colors border-y border-slate-200 bg-slate-50">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm font-semibold| leading-none text-slate-500">
+                                Fecha de Actividad
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors border-y border-slate-200 bg-slate-50">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm font-semibold| leading-none text-slate-500">
+                                Nombre Completo
+                            </p>
+                        </th>
+                        <th class="p-4 transition-colors border-y border-slate-200 bg-slate-50">
+                            <p class="flex items-center justify-between gap-2 font-sans text-sm  font-semibold| leading-none text-slate-500">
+                                Detalle de Actividad
+                            </p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of activities">
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="flex items-center gap-3">
+                                <div class="flex flex-col">
+                                    <p class="text-sm text-slate-700">
+                                        {{item.createdDate | date :'medium' }}
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="flex flex-col">
+                                <p class="text-sm text-slate-700">
+                                    {{item.userName}}
+                                </p>
+                            </div>
+                        </td>
+                        <td class="p-4 border-b border-slate-200">
+                            <div class="flex flex-col">
+                                <p class="text-sm text-slate-700">
+                                    {{item.activityType}}
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
