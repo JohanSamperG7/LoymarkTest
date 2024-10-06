@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;
 
-namespace Loaymark.Back.Api.Filters;
+namespace Loymark.Back.Api.Filters;
 
 [AttributeUsage(AttributeTargets.All)]
 public sealed class AppExceptionFilterAttribute : ExceptionFilterAttribute
