@@ -2,6 +2,7 @@ import { CommonModule, formatDate } from '@angular/common';
 import { Component, OnInit, signal, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { delay } from 'rxjs';
 
 export interface User {
   id: number;
@@ -132,8 +133,10 @@ export default class UserComponent implements OnInit{
 
   openEditModal(user: User){
     this.resetForm();
-    this.user = user;
-    this.isModalEditOpen.set(true);
+    setTimeout(() => {
+      this.isModalEditOpen.set(true);
+      this.user = user;      
+    }, 500);    
   }
 
   closeModal(){
