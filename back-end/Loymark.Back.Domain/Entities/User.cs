@@ -7,7 +7,7 @@ namespace Loymark.Back.Domain.Entities
     public class User : EntityBase<int>
     {
         private const string PATTERN_EMAIL = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-        private const string PATTERN_NAMES = @"^[a-zA-Z\s]+$";
+        private const string PATTERN_NAMES = @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$";
 
         public string Name { get; protected set; }
         public string LastName { get; protected set; }

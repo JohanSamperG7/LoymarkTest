@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User, UserToRegister } from '../business/user/user.component';
@@ -17,5 +17,13 @@ export class UserService {
 
   registerUser(user: UserToRegister){
     return this.http.post<User>(this.apiUrl, user);
+  }
+
+  updateUser(user: User){
+    return this.http.patch<User>(this.apiUrl, user);
+  }
+
+  deleteUser(id: number): Observable<HttpResponse<any>>{
+    return this.http.delete<HttpResponse<any>>(this.apiUrl+`/${id}`, { observe: 'response' });
   }
 }

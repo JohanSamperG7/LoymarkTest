@@ -41,10 +41,10 @@ namespace Loymark.Back.WebApi.Controllers
             return await _mediator.Send(command);
         }
 
-        [HttpDelete]
-        public async Task DeleteUserAsync(UserDeleteCommand command)
+        [HttpDelete("{id}")]
+        public async Task DeleteUserByIdAsync(int id)
         {
-            await _mediator.Send(command);
+            await _mediator.Send(new UserDeleteCommand(id));
         }
     }
 }
